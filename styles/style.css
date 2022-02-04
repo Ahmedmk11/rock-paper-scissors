@@ -34,9 +34,6 @@ header{
     height: 200px;
     width: 250px;
     text-align: center;
-}
-
-#game-over{
     flex-direction: column;
     align-items: center;
 }
