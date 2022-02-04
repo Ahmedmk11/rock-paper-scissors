@@ -41,6 +41,8 @@ function gameRound(playerSelection, computerSelection){
     resultsR.textContent = `Round ${stats[2]}\r\n`;
     resultsP.textContent =`Rohan Kishibe ${stats[0]}\r\n`;
     resultsC.textContent =`Ken Oyanagi ${stats[1]}`;
+    left.textContent = `${playerSelection}`;
+    right.textContent = `${computerSelection}`;
     
     if(isGameOver()){
         final = document.getElementById('final-container');
@@ -83,6 +85,9 @@ function gameOver(){
     resultsR.textContent = 'Ready?';
     resultsP.textContent = 'Rohan Kishibe';
     resultsC.textContent = 'Ken Oyanagi';
+
+    left.textContent = "";
+    right.textContent = "";
 }
 
 function statsTracking(win,lose,tie){
@@ -102,11 +107,15 @@ let resultsA = document.getElementById('resultsA');
 let resultsR = document.getElementById('resultsR');
 let resultsP = document.getElementById('resultsP');
 let resultsC = document.getElementById('resultsC');
+let left = document.getElementById('left');
+let right = document.getElementById('right');
 
 resultsA.textContent= 'So, What\'s It Gonna Be?';
 resultsR.textContent = 'Ready?';
 resultsP.textContent = 'Rohan Kishibe';
 resultsC.textContent = 'Ken Oyanagi';
+left.textContent = "";
+right.textContent = "";
 
 
 let final = document.getElementById('final-container'); 
