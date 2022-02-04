@@ -77,7 +77,7 @@ function gameOver(){
     let vs = document.getElementById("vs-container");
     startDiv.style.display = "none";
     gamePlayScreen.style.display = "none";
-    gameOverScreen.style.display = "block";
+    gameOverScreen.style.display = "flex";
     vs.style.display = "none";
     
     stats = [0,0,0];

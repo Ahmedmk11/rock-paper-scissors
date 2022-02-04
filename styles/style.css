@@ -2,7 +2,8 @@ html{
     height: 100% ;
 }
 body{
-    background-color: #fff;
+    background-color: darkcyan;
+    font-weight: 100;
     color: #000;
     min-height: 100%;
     text-align: center;
@@ -10,6 +11,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 #content-row{
     display: flex;
@@ -24,12 +27,18 @@ header{
 }
 
 #start, #game-over{
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color:black;
     padding: 20px;
     height: 200px;
     width: 250px;
     text-align: center;
+}
+
+#game-over{
+    flex-direction: column;
+    align-items: center;
 }
 
 #start a, #game-over a{
@@ -54,7 +63,7 @@ header{
 }
 
 #game-screen{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     border: 3px solid black;
     color:black;
     padding-bottom: 28px;
@@ -92,13 +101,22 @@ button:hover{
     justify-content: flex-start;
 }
 
+#final-container{
+    font-size: 30px;
+    text-shadow: #000;
+    margin-bottom: 0px;
+    width: 270px;
+    height: 210px;
+    text-align: center;
+}
+
 #resultsR{
     margin-top: 30px;
     font-size: 35px;
     border: 3px solid black;
 }
 #resultsA{
-    margin-top: 60px;
+    margin-top: 40px;
     font-size: 35px;
     border: 3px solid black;
 }
@@ -137,4 +155,5 @@ button:hover{
 #moves-wrapper{
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
