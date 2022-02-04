@@ -1,17 +1,20 @@
 body{
     background-color: #fff;
     color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #start, #game-over{
     font-family: Arial, Helvetica, sans-serif;
     color:black;
     padding: 20px;
-    position: fixed;
-    top:50%;
-    left:50%;
-    margin-top: -100px;
-    margin-left: -100px;
+    
     height: 200px;
     width: 250px;
     text-align: center;
@@ -37,4 +40,17 @@ body{
 #start a:hover, #game-over a:hover{
     background-color: #000;
     color: deeppink;
+}
+
+#game-screen{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid black;
+    color:black;
+    padding: 50px;
+    
+    height: auto;
+    width: auto;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
 }

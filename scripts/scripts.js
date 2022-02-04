@@ -59,6 +59,7 @@ function mainGame(){
     startDiv.style.display = "none";
     gamePlayScreen.style.display = "block";
     gameOverScreen.style.display = "none";
+    //checkClick();
 }
 
 function gameOver(){
@@ -68,6 +69,7 @@ function gameOver(){
     startDiv.style.display = "none";
     gamePlayScreen.style.display = "none";
     gameOverScreen.style.display = "block";
+    
     
     stats = [0,0,0];
     results.textContent='';
@@ -83,6 +85,13 @@ function statsTracking(win,lose,tie){
     }else if(tie == 1){
         stats[2] += 1;
     }
+}
+function checkClick(){
+    const btns = document.querySelectorAll(".buttons");
+    console.log(btns);
+    btns.forEach(btn => btn.addEventListener("click", () => {
+        (gameRound(btn.id,computerPlay())) 
+    }));
 }
 
 let stats = [0,0,0];
