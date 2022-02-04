@@ -15,27 +15,32 @@ function computerPlay(){
 }
 
 function gameRound(playerSelection, computerSelection){
-    results = document.getElementById('results-container');
+    resultsA = document.getElementById('resultsA');
+    resultsR = document.getElementById('resultsR');
+    resultsP = document.getElementById('resultsP');
+    resultsC = document.getElementById('resultsC');
 
     if(computerSelection == "Rock" && playerSelection == "Rock" || 
             computerSelection == "Paper" && playerSelection == "Paper" || 
             computerSelection == "Scissors" && playerSelection == "Scissors"){
 
-        results.textContent = "It's a Tie!";
+        resultsA.textContent = "It's a Tie!";
         statsTracking(0,0,1);
 
     }else if(computerSelection == "Rock" && playerSelection == "Scissors" ||
                 computerSelection == "Paper" && playerSelection == "Rock" ||
                 computerSelection == "Scissors" && playerSelection == "Paper"){
 
-        results.textContent = `You Lose! ${computerSelection} beats ${playerSelection}. :(`;
+        resultsA.textContent = `You Lose! ${computerSelection} beats ${playerSelection}.`;
         statsTracking(0,1,0);
 
     }else{
-        results.textContent = `You Win! ${playerSelection} beats ${computerSelection}. :)`;        
+        resultsA.textContent = `You Win! ${playerSelection} beats ${computerSelection}.`;        
         statsTracking(1,0,0);
     }
-    console.log(`Round: ${stats[2]} \nPlayer: ${stats[0]} \nComputer: ${stats[1]}`);
+    resultsR.textContent = `Round ${stats[2]}\r\n`;
+    resultsP.textContent =`Rohan Kishibe ${stats[0]}\r\n`;
+    resultsC.textContent =`Ken Oyanagi ${stats[1]}`;
     
     if(isGameOver()){
         final = document.getElementById('final-container');
@@ -56,21 +61,28 @@ function mainGame(){
     let startDiv = document.getElementById("start");
     let gamePlayScreen = document.getElementById("game-screen");
     let gameOverScreen = document.getElementById("game-over");
+    let vs = document.getElementById("vs-container");
     startDiv.style.display = "none";
-    gamePlayScreen.style.display = "block";
+    gamePlayScreen.style.display = "flex";
     gameOverScreen.style.display = "none";
+    vs.style.display = "flex";
 }
 
 function gameOver(){
     let startDiv = document.getElementById("start");
     let gamePlayScreen = document.getElementById("game-screen");
     let gameOverScreen = document.getElementById("game-over");
+    let vs = document.getElementById("vs-container");
     startDiv.style.display = "none";
     gamePlayScreen.style.display = "none";
     gameOverScreen.style.display = "block";
+    vs.style.display = "none";
     
     stats = [0,0,0];
-    results.textContent='';
+    resultsA.textContent= 'So, What\'s It Gonna Be?';
+    resultsR.textContent = 'Ready?';
+    resultsP.textContent = 'Rohan Kishibe';
+    resultsC.textContent = 'Ken Oyanagi';
 }
 
 function statsTracking(win,lose,tie){
@@ -86,7 +98,17 @@ function statsTracking(win,lose,tie){
 }
 
 let stats = [0,0,0];
-let results = document.getElementById('results-container');
+let resultsA = document.getElementById('resultsA');
+let resultsR = document.getElementById('resultsR');
+let resultsP = document.getElementById('resultsP');
+let resultsC = document.getElementById('resultsC');
+
+resultsA.textContent= 'So, What\'s It Gonna Be?';
+resultsR.textContent = 'Ready?';
+resultsP.textContent = 'Rohan Kishibe';
+resultsC.textContent = 'Ken Oyanagi';
+
+
 let final = document.getElementById('final-container'); 
 
 const btns = document.querySelectorAll(".buttons");

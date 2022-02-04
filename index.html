@@ -8,27 +8,53 @@
         <title>Janken!</title>
     </head>
     <body>
-        <div id="start" style="display:block">
-            <a href="#" onclick="mainGame()">Start Game</a>
-        </div>
-        
-        
-        <div id="game-screen" style="display:none">
-            <header>
-                <h1>Rock Paper Scissors</h1>
-            </header>
-            <div id="selections-container">
-                <button id="Rock" class="buttons"><strong>Rock</strong></button>
-                <button id="Paper" class="buttons"><strong>Paper</strong></button>
-                <button id="Scissors" class="buttons"><strong>Scissors</strong></button>
-            </div>
-            <div id="results-container"></div>
-        </div>
+        <header>
+            <h1>Janken!</h1>
+        </header>
 
-        <div id="game-over" style="display:none">
-            <h1>Game Over</h1>
-            <div id="final-container"></div>
-            <a href="#" onclick="mainGame()">Start Game</a>
+        <div id="container-main">
+            <div id="start" style="display:block">
+                <a href="#" onclick="mainGame()">Start Game</a>
+            </div>
+
+            <div id="vs-container" style="display:none">
+                <img class="vs" src="images/rohan.jpg">
+                <img class="vs" src="images/ken.jpg">
+            </div>
+
+            <div id="game-screen" style="display:none">
+                <div id="results-container">
+                    <div id="resultsR"></div>
+                    
+                    
+                    <div id="both-results">
+                        <div id="parent">
+                            <div id="player-res">
+                                <div id="resultsP"></div>
+                            </div>
+                        </div>
+                        <div id="computer-res">
+                            <div id="resultsC"></div>
+                        </div>
+                    </div>
+
+                    <div id="resultsA"></div>
+
+
+                </div>
+                
+                <div id="selections-container">
+                    <button id="Rock" class="buttons"><strong>Rock</strong></button>
+                    <button id="Paper" class="buttons"><strong>Paper</strong></button>
+                    <button id="Scissors" class="buttons"><strong>Scissors</strong></button>
+                </div>
+            </div>
+    
+            <div id="game-over" style="display:none">
+                <h1>Game Over</h1>
+                <div id="final-container"></div>
+                <a href="#" onclick="mainGame()">Start Game</a>
+            </div>
         </div>
     </body>
 </html>
