@@ -15,8 +15,7 @@ function computerPlay(){
 }
 
 function gameRound(playerSelection, computerSelection){
-    console.log(`Round: ${stats[2]} \nPlayer: ${stats[0]} \nComputer: ${stats[1]}`);
-    const results = document.querySelector('#results-container');
+    results = document.getElementById('results-container');
 
     if(computerSelection == "Rock" && playerSelection == "Rock" || 
             computerSelection == "Paper" && playerSelection == "Paper" || 
@@ -36,13 +35,16 @@ function gameRound(playerSelection, computerSelection){
         results.textContent = `You Win! ${playerSelection} beats ${computerSelection}. :)`;        
         statsTracking(1,0,0);
     }
+    console.log(`Round: ${stats[2]} \nPlayer: ${stats[0]} \nComputer: ${stats[1]}`);
+    
     if(isGameOver()){
-        const final = document.querySelector('#results-container');
+        final = document.getElementById('final-container');
         if(stats[0] > stats[1]){
             final.textContent = "You Won The Game!";
         }else{
             final.textContent = "You Lost The Game";
-        } 
+        }
+        gameOver();
     }
 }
 
@@ -51,8 +53,28 @@ function isGameOver(){
 }
 
 function mainGame(){
-    
+    let startDiv = document.getElementById("start");
+    let gamePlayScreen = document.getElementById("game-screen");
+    let gameOverScreen = document.getElementById("game-over");
+    startDiv.style.display = "none";
+    gamePlayScreen.style.display = "block";
+    gameOverScreen.style.display = "none";
+    //checkClick();
 }
+
+function gameOver(){
+    let startDiv = document.getElementById("start");
+    let gamePlayScreen = document.getElementById("game-screen");
+    let gameOverScreen = document.getElementById("game-over");
+    startDiv.style.display = "none";
+    gamePlayScreen.style.display = "none";
+    gameOverScreen.style.display = "block";
+    
+    
+    stats = [0,0,0];
+    results.textContent='';
+}
+
 function statsTracking(win,lose,tie){
     if (win == 1){
         stats[0] += 1;
@@ -64,13 +86,15 @@ function statsTracking(win,lose,tie){
         stats[2] += 1;
     }
 }
+function checkClick(){
+    const btns = document.querySelectorAll(".buttons");
+    console.log(btns);
+    btns.forEach(btn => btn.addEventListener("click", () => {
+        (gameRound(btn.id,computerPlay())) 
+    }));
+}
 
-const start = document.querySelector('#start-button');
-start.addEventListener('click',mainGame);
-const stats = [0,0,0];
-
-
-const btns = document.querySelectorAll(".buttons");
-btns.forEach(btn => btn.addEventListener("click", () => {
-    (gameRound(btn.id,computerPlay())) 
-}));
+let stats = [0,0,0];
+let results = document.getElementById('results-container');
+let final = document.getElementById('final-container'); 
+checkClick();

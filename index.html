@@ -3,24 +3,32 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <script src="scripts/script.js"></script>
         <link rel="stylesheet" href="styles/style.css"/>
         <title>Janken!</title>
     </head>
     <body>
-        <header>
-            <h1>Rock Paper Scissors</h1>
-        </header>
-        <h1 id="start-button"><button>Play</button></h1>
-        <div id="selections-container">
-            <button id="Rock" class="buttons"><strong>Rock</strong></button>
-            <button id="Paper" class="buttons"><strong>Paper</strong></button>
-            <button id="Scissors" class="buttons"><strong>Scissors</strong></button>
+        <div id="start" style="display:block">
+            <a href="#" onclick="mainGame()">Start Game</a>
+        </div>
+        
+        
+        <div id="game-screen" style="display:none">
+            <header>
+                <h1>Rock Paper Scissors</h1>
+            </header>
+            <div id="selections-container">
+                <button id="Rock" class="buttons"><strong>Rock</strong></button>
+                <button id="Paper" class="buttons"><strong>Paper</strong></button>
+                <button id="Scissors" class="buttons"><strong>Scissors</strong></button>
+            </div>
+            <div id="results-container"></div>
         </div>
 
-        <div id="results-container">
-
+        <div id="game-over" style="display:none">
+            <h1>Game Over</h1>
+            <div id="final-container"></div>
+            <a href="#" onclick="mainGame()">Start Game</a>
         </div>
-        <script src="scripts/script.js"></script>
     </body>
 </html>
